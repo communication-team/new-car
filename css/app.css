@@ -1,0 +1,339 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    min-height: 100%;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    letter-spacing: 1px;
+    scroll-behavior: smooth;
+}
+
+button,
+.btn {
+    background: rgb(100, 0, 255);
+    color: white;
+    font-weight: bold;
+    padding: .5rem 1.25rem;
+    border: 0;
+    transition: .3s;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.btn-floating {
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(100, 0, 255);
+}
+
+img {
+    max-width: 100%;
+}
+
+button:hover {
+    opacity: .75;
+}
+
+#intro h1,
+#intro .btn {
+    position: relative;
+    z-index: 2;
+}
+
+header {
+    /*position: fixed;*/
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    width: 90%;
+    margin: 0 auto;
+    z-index: 999;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 1px rgba(255,255,255,.2);
+}
+header a {
+    color: white;
+    text-decoration: none;
+    padding: 0 1rem;
+}
+header .brand {
+    font-weight: bold;
+    font-size: 20px;
+}
+#intro {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(/assets/images/street.png);
+    height: 100vh;
+    background-size: auto 100%;
+    padding-bottom: .87rem;
+    animation: background-intro 30s infinite linear;
+}
+
+#intro:after {
+    content: '';
+    display: block;background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,.75) 0%, rgba(0,212,255,0) 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#intro .btn {
+    top: -5%;
+    font-size: 24px;
+    padding: 1rem 3rem;
+}
+
+#intro h1 {
+    position: relative;
+    color: #202020;
+    font-size: 72px;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+}
+
+#intro h2 {
+    position: relative;
+    color: #202020;
+    font-size: 42px;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: normal;
+}
+
+#intro h1:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    content: 'WELCOME';
+    font-size: 300px;
+    text-transform: uppercase;
+    opacity: .05;
+}
+
+
+.car-intro {
+    position: relative;
+    background-image: url(/assets/images/mercedes-benzaclass-side.png);
+    background-size: contain;
+    width: 80%;
+    height: 60%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.front-wheel,
+.back-wheel {
+    width: 15%;
+    position: absolute;
+    bottom: 1%;
+    animation: wheel 2s infinite linear;
+}
+
+.back-wheel {
+    right: 12.5%;
+}
+.front-wheel {
+    left: 10%;
+}
+
+@keyframes background-intro {
+    0% {
+        background-position-x: 0%;
+    }
+    100% {
+        background-position-x: -100%;
+    }
+}
+
+@keyframes wheel {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.card {
+    box-shadow: 0 10px 15px rgba(0,0,0,.15);
+    padding: 2rem 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+}
+
+.card .price {
+    font-weight: bold;
+    margin-top: 1rem;
+    text-align: right;
+}
+
+.market-thumbnail {
+    width: 100%;
+    padding-bottom: 65%;
+    background-size: contain !important;
+    background-position: center !important;
+}
+
+.market-carname {
+    font-weight: bold;
+}
+
+.market-buy {
+    margin-top: 1rem;
+}
+
+#market {
+    padding: 2rem 0;
+}
+
+#market h1 {
+    margin: 1rem;
+}
+
+
+#preview {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+    margin: 0 auto;
+    background-image: url(./assets/images/bg/garage.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+  }
+
+  .car-preview,
+  .car-sticker,
+  .car-paint {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+  
+  .car-preview {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  
+  .car-sticker {
+    z-index: 2;
+    opacity: .75;
+    /*mix-blend-mode: multiply;*/
+  
+    /* sticker image */
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    -webkit-mask-position: center;
+  
+    /* car image without windows and wheels */
+    background-repeat: no-repeat;
+    background-size: 25%;
+    background-position: 50% 50%;
+  }
+  
+  .car-paint {
+    mix-blend-mode: darken;
+    z-index: 1;
+    opacity: 0.75;
+    display: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .cube-paints {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+  }
+  .cube {
+      position: relative;
+      height: 50px;
+      width: 50px;
+      border-radius: 10px;
+      margin: 5px;
+      cursor: pointer;
+      border: solid 3px rgba(0,0,0,.15);
+  }
+  .cube:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 90%;
+      background: rgba(255,255,255,.15);
+      border-radius: 5px;
+  }
+
+  .cube input {
+      opacity: 0;
+  }
+  
+  .car-editor {
+      position: relative;
+      padding-top: 75px;
+      padding-bottom: 50px;
+  }
+  .sticker-editor {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+  }
+  #changeSticker {
+      background-image: url();
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 70px;
+      height: 70px;
+      background-color: transparent;
+      margin: 5px;
+  }
+
+  .preview-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+  }
