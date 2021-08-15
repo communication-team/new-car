@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+    <header>
+        <a class="brand" href="#">HOT WHEELS</a>
+        <ul>
+            <a href="#">HOMEPAGE</a>
+            <a href="#">ABOUT</a>
+            <a href="#">CONTACT</a>
+        </ul>
+    </header>
+    <section id="car-detail">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-8">
+                    <div class="car-editor">
+                        <div id="preview">
+                            <div class="car-sticker" style="-webkit-mask-image: url(./assets/images/cars/toyota-avalon-side-paint.png); background-image: url(./assets/images/stickers/graffit1.png);"></div>
+                            <div class="car-paint" style="background-image: url(./assets/images/cars/toyota-avalon-side-paint.png);"></div>
+                            <div class="car-preview" style="background-image: url(./assets/images/cars/toyota-avalon-side.png);"></div>
+                        </div>
+                        <div class="preview-buttons">
+                            <button><i class="fas fa-chevron-left"></i></button>
+                            <button><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="sticker-editor d-flex">
+                            <div class="text-center">
+                                <button onclick="stickerUp()"><i class="fas fa-arrow-up"></i></button>
+                                <div class="d-flex align-items-center">
+                                    <button onclick="stickerLeft()"><i class="fas fa-arrow-left"></i></button>
+                                    <button onclick="changeSticker()" id="changeSticker" style="background-image: url(./assets/images/stickers/graffit1.png);"></button>
+                                    <button onclick="stickerRight()"><i class="fas fa-arrow-right"></i></button>
+                                </div>
+                                <button onclick="stickerDown()" ><i class="fas fa-arrow-down"></i></button>
+                            </div>
+                            <div>
+                                <button onclick="sizeUp()" class="btn btn-floating"><i class="fas fa-plus"></i></button>
+                                <button onclick="sizedown()" class="btn btn-floating"><i class="fas fa-minus"></i></button>
+                            </div>
+                        </div>
+                        <div class="cube-paints">
+                            <label class="cube" style="background: white;"><input type="radio" class="radioColor" value="0" name="color"></label>
+                            <label class="cube" style="background: #383837;"><input type="radio" class="radioColor" value="1" name="color"></label>
+                            <label class="cube" style="background: #ed3c3a;"><input type="radio" class="radioColor" value="2" name="color"></label>
+                            <label class="cube" style="background: #ce533c;"><input type="radio" class="radioColor" value="33" name="color"></label>
+                            <label class="cube" style="background: #447433;"><input type="radio" class="radioColor" value="84" name="color"></label>
+                            <label class="cube" style="background: #3675c7;"><input type="radio" class="radioColor" value="208" name="color"></label>
+                            <label class="cube" style="background: #9045de;"><input type="radio" class="radioColor" value="272" name="color"></label>
+                            <label class="cube" style="background: #b839da;"><input type="radio" class="radioColor" value="289" name="color"></label>
+                            <label class="cube" style="background: #e539b1;"><input type="radio" class="radioColor" value="314" name="color"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h1>BMW Z3</h1>
+
+                    <div>
+                        <small><b>Year</b></small>
+                        <p>2018</p>
+                    </div>
+
+                    <div>
+                        <small><b>Engine size</b></small>
+                        <p>500CC</p>
+                    </div>
+
+                    <div>
+                        <small><b>Fuel</b></small>
+                        <p>Disel</p>
+                    </div>
+
+                    <div>
+                        <small><b>Passnger</b></small>
+                        <p>4 People</p>
+                    </div>
+                    
+                    <div class="car-price border p-3">
+                        <p class="d-flex justify-content-between mb-2">Car <span>20,000 JOD</span></p>
+                        <p class="d-flex justify-content-between mb-2">Paint <span>500 JOD</span></p>
+                        <p class="d-flex justify-content-between mb-2">Sticker <span>300 JOD</span></p>
+                        <p class="d-flex justify-content-between mb-3 pb-3 border-bottom">Tax <span>800 JOD</span></p>
+                        <p class="d-flex justify-content-between mb-2">Total Price</p>
+                        <h2>21,600 JOD</h2>
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn">CHECKOUT</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
+    
